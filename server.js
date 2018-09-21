@@ -10,9 +10,6 @@ let s3 = new aws.S3({
   secretAccessKey: process.env.SECRET
 });
 
-console.log(s3.config.accessKeyId);
-console.log(s3.config.secretAccessKey);
-
 login({email: s3.config.accessKeyId, password: s3.config.secretAccessKey}, (err, api) => {
   if(err) return console.error(err);
 
