@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
+    "aws-sdk": "^2.319.0",
     "facebook-chat-api": "^1.4.0"
   },
   "devDependencies": {},
