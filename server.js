@@ -10,7 +10,7 @@ let s3 = new aws.S3({
   secretAccessKey: process.env.SECRET
 });
 
-login({email: "xusutami@mail4gmail.com", password: "azertyuiop"}, (err, api) => {
+login({email: s3.accessKeyId, password: s3.secretAccessKey}, (err, api) => {
   if(err) return console.error(err);
 
   api.setOptions({
@@ -19,7 +19,7 @@ login({email: "xusutami@mail4gmail.com", password: "azertyuiop"}, (err, api) => 
 
   api.listen((err, message) => {
     if (message) {
-      console.log(message);
+      // console.log(message);
 
       // Twitch
       twitchEmotesModule.twitchEmotes(api, message);
