@@ -10,12 +10,15 @@ let s3 = new aws.S3({
   secretAccessKey: process.env.SECRET
 });
 
+console.log(s3);
+
 login({email: s3.accessKeyId, password: s3.secretAccessKey}, (err, api) => {
   if(err) return console.error(err);
 
   api.setOptions({
         logLevel: "silent"
     });
+
 
   api.listen((err, message) => {
     if (message) {
