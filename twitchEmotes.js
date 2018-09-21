@@ -20,6 +20,15 @@ module.exports.twitchEmotes = function (api, message) {
     api.sendMessage(msg, message.threadID);
   }
 
+  //solo
+  if (message.body.toLowerCase().includes("!solo")) {
+      var msg = {
+          body: "",
+          attachment: fs.createReadStream('img/solo.png')
+      }
+      api.sendMessage(msg, message.threadID);
+  }
+
   // Twitch
   if (message.body.includes("Kappa")) {
     var msg = {
